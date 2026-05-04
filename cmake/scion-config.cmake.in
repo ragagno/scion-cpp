@@ -1,0 +1,14 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/scion-targets.cmake")
+
+set(scion_FOUND TRUE)
+set(scion_VERSION "@PROJECT_VERSION@")
+
+if(NOT scion_FIND_QUIETLY)
+    message(STATUS "Found scion ${scion_VERSION}")
+endif()
+
+if(NOT TARGET scion::scion)
+    message(FATAL_ERROR "Target scion::scion was not found!")
+endif()
